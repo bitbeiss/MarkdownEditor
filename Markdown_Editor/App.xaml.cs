@@ -13,5 +13,6 @@ namespace Markdown_Editor
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

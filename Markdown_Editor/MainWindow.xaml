@@ -20,20 +20,24 @@
 
             <!--Tabs-->
             <Fluent:RibbonTabItem Header="Home">
-                <Fluent:RibbonGroupBox Header="Group">
-                    <Fluent:Button Header="Green" />
-                    <Fluent:Button Header="Grey"  />
+                <Fluent:RibbonGroupBox Header="load">
+                    <Fluent:Button x:Name="btnLoad" Header="load" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="save">
+                    <Fluent:Button x:Name="btnSave" Header="save" LargeIcon="Images/save.png" Click="btnSave_click"/>
+                    <Fluent:Button x:Name="btnSaveAs" Header="save as" LargeIcon="Images/save_as.png" Click="btnSaveAs_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
-        
-        <!--<RichTextBox Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" Width="Auto">
+
+     
+        <RichTextBox x:Name="rtbMainText" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" Width="Auto">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="RichTextBox"/>
                 </Paragraph>
             </FlowDocument>
-        </RichTextBox>-->
+        </RichTextBox>
     </Grid>
 </Fluent:RibbonWindow>
 
