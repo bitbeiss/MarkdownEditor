@@ -83,7 +83,8 @@ namespace Markdown_Editor
                  Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 
             //dlgFileOpen.Filter = "*.markdown|*.mdown|*.mkdn|*.mkd|*.md|*.mdtxt|*mdtext|*.txt|*.text*|.Rmd";
-            dlgFileOpen.Filter = "Textdateien *.mkd";
+            //dlgFileOpen.Filter = "*.markdown|*.mdown|*.mkdn|*.mkd|*.md|*.mdtxt|*mdtext|*.txt|*.text*|.Rmd";
+            dlgFileOpen.Filter = "Textdateien (*.mkd)|*.mkd";
 
             dlgFileOpen.ShowDialog();
 
@@ -103,7 +104,6 @@ namespace Markdown_Editor
 
             rtbMainText.Document.Blocks.Clear();
             rtbMainText.Document.Blocks.Add(new Paragraph(new Run(content)));
-
         }
     }
 }
