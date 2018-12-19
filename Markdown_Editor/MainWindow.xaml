@@ -13,10 +13,10 @@
 
         <Fluent:Ribbon Grid.Row="0">
             <!--Backstage-->
-            <Fluent:Ribbon.Menu>
+            <!--<Fluent:Ribbon.Menu>
                 <Fluent:Backstage>
                 </Fluent:Backstage>
-            </Fluent:Ribbon.Menu>
+            </Fluent:Ribbon.Menu>-->
 
             <!--Tabs-->
             <Fluent:RibbonTabItem Header="Home">
@@ -28,9 +28,40 @@
                     <Fluent:Button x:Name="btnSaveAs" Header="save as" LargeIcon="Images/save_as.png" Click="btnSaveAs_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Format">
+                <Fluent:RibbonGroupBox Header="Highlight">
+                    <Fluent:Button x:Name="btn_bold" Header="Bold" LargeIcon="Images/load.png" />
+                    <Fluent:Button x:Name="btn_italic" Header="Italic" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Code">
+                    <Fluent:Button x:Name="btn_markCode" Header="mark code" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Structure">
+                <Fluent:RibbonGroupBox Header="save">
+                    <Fluent:Button x:Name="btn_seperator" Header="Seperator" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                    <Fluent:Button x:Name="btn_linebreak" Header="Linebreak" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                    <Fluent:Button x:Name="btn_paragraph" Header="Clause" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Headings">
+                    <Fluent:DropDownButton x:Name="ddbtn_Heading" Header="Headings" >
+                        <Fluent:DropDownButton.Items>
+                            <Fluent:MenuItem Header="Heading 1.Level" Click="OnClickHeading1Level"></Fluent:MenuItem>
+                            <Fluent:MenuItem Header="Heading 2.Level" Click="OnClickHeading2Level"></Fluent:MenuItem>
+                            <Fluent:MenuItem Header="Heading 3.Level" Click="OnClickHeading3Level"></Fluent:MenuItem>
+                            <Fluent:MenuItem Header="Heading 4.Level" Click="OnClickHeading4Level"></Fluent:MenuItem>
+                            <Fluent:MenuItem Header="Heading 5.Level" Click="OnClickHeading5Level"></Fluent:MenuItem>
+                            <Fluent:MenuItem Header="Heading 6.Level" Click="OnClickHeading6Level"></Fluent:MenuItem>
+                        </Fluent:DropDownButton.Items>
+                    </Fluent:DropDownButton>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Quote">
+                        <Fluent:Button x:Name="btn_quote" Header="Quote" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                        <Fluent:Button x:Name="btn_unquote" Header="Unquote" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
 
-     
         <RichTextBox x:Name="rtbMainText" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" Width="Auto">
             <FlowDocument>
                 <Paragraph>

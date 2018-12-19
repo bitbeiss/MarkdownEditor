@@ -105,5 +105,35 @@ namespace Markdown_Editor
             rtbMainText.Document.Blocks.Clear();
             rtbMainText.Document.Blocks.Add(new Paragraph(new Run(content)));
         }
+
+        private void OnClickHeading1Level(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnClickHeading2Level(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnClickHeading3Level(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnClickHeading4Level(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnClickHeading5Level(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnClickHeading6Level(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
