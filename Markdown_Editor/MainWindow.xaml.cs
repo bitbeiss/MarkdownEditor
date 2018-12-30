@@ -106,6 +106,46 @@ namespace Markdown_Editor
             rtbMainText.Document.Blocks.Add(new Paragraph(new Run(content)));
         }
 
+        private void btnBold_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnItalic_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCode_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSeparator_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnLineBreak_click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnParagraph_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnQuote_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnUnQuote_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void OnClickHeading1Level(object sender, RoutedEventArgs e)
         {
 

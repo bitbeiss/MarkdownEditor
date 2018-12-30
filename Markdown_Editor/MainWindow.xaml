@@ -20,7 +20,7 @@
 
             <!--Tabs-->
             <Fluent:RibbonTabItem Header="Home">
-                <Fluent:RibbonGroupBox Header="load">
+                <Fluent:RibbonGroupBox Header="Load">
                     <Fluent:Button x:Name="btnLoad" Header="load" LargeIcon="Images/load.png" Click="btnLoad_click" />
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="save">
@@ -30,18 +30,18 @@
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Format">
                 <Fluent:RibbonGroupBox Header="Highlight">
-                    <Fluent:Button x:Name="btn_bold" Header="Bold" LargeIcon="Images/load.png" />
-                    <Fluent:Button x:Name="btn_italic" Header="Italic" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                    <Fluent:Button x:Name="btn_bold" Header="Bold" LargeIcon="Images/load.png" Click="btnBold_click"/>
+                    <Fluent:Button x:Name="btn_italic" Header="Italic" LargeIcon="Images/load.png" Click="btnItalic_click" />
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Code">
-                    <Fluent:Button x:Name="btn_markCode" Header="mark code" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                    <Fluent:Button x:Name="btn_markCode" Header="mark code" LargeIcon="Images/load.png" Click="btnCode_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Structure">
                 <Fluent:RibbonGroupBox Header="save">
-                    <Fluent:Button x:Name="btn_seperator" Header="Seperator" LargeIcon="Images/load.png" Click="btnLoad_click" />
-                    <Fluent:Button x:Name="btn_linebreak" Header="Linebreak" LargeIcon="Images/load.png" Click="btnLoad_click" />
-                    <Fluent:Button x:Name="btn_paragraph" Header="Clause" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                    <Fluent:Button x:Name="btn_seperator" Header="Seperator" LargeIcon="Images/load.png" Click="btnSeparator_click" />
+                    <Fluent:Button x:Name="btn_linebreak" Header="Linebreak" LargeIcon="Images/load.png" Click="btnLineBreak_click" />
+                    <Fluent:Button x:Name="btn_paragraph" Header="Clause" LargeIcon="Images/load.png" Click="btnParagraph_click" />
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Headings">
                     <Fluent:DropDownButton x:Name="ddbtn_Heading" Header="Headings" >
@@ -56,8 +56,8 @@
                     </Fluent:DropDownButton>
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Quote">
-                        <Fluent:Button x:Name="btn_quote" Header="Quote" LargeIcon="Images/load.png" Click="btnLoad_click" />
-                        <Fluent:Button x:Name="btn_unquote" Header="Unquote" LargeIcon="Images/load.png" Click="btnLoad_click" />
+                        <Fluent:Button x:Name="btn_quote" Header="Quote" LargeIcon="Images/load.png" Click="btnQuote_click" />
+                        <Fluent:Button x:Name="btn_unquote" Header="Unquote" LargeIcon="Images/load.png" Click="btnUnQuote_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
