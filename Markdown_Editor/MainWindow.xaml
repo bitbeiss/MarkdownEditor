@@ -2,7 +2,8 @@
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:Fluent="urn:fluent-ribbon"
-                     Title="My first RibbonWindow" 
+                     xmlns:svg2xaml="clr-namespace:Svg2Xaml;assembly=Svg2Xaml"
+                     Title="Markdown Editor" 
                      Width="800" 
                      Height="600">
     <Grid>
@@ -23,28 +24,28 @@
                 <Fluent:RibbonGroupBox Header="Load">
                     <Fluent:Button x:Name="btnLoad" Header="load" LargeIcon="Images/load.png" Click="btnLoad_click" />
                 </Fluent:RibbonGroupBox>
-                <Fluent:RibbonGroupBox Header="save">
+                <Fluent:RibbonGroupBox Header="Save">
                     <Fluent:Button x:Name="btnSave" Header="save" LargeIcon="Images/save.png" Click="btnSave_click"/>
                     <Fluent:Button x:Name="btnSaveAs" Header="save as" LargeIcon="Images/save_as.png" Click="btnSaveAs_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Format">
                 <Fluent:RibbonGroupBox Header="Highlight">
-                    <Fluent:Button x:Name="btn_bold" Header="Bold" LargeIcon="Images/load.png" Click="btnBold_click"/>
-                    <Fluent:Button x:Name="btn_italic" Header="Italic" LargeIcon="Images/load.png" Click="btnItalic_click" />
+                    <Fluent:Button x:Name="btn_bold" Header="Bold" LargeIcon="{svg2xaml:SvgImage Images/format_bold.svg}" Click="btnBold_click"/>
+                    <Fluent:Button x:Name="btn_italic" Header="Italic" LargeIcon="{svg2xaml:SvgImage Images/format_italic.svg}" Click="btnItalic_click" />
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Code">
-                    <Fluent:Button x:Name="btn_markCode" Header="mark code" LargeIcon="Images/load.png" Click="btnCode_click" />
+                    <Fluent:Button x:Name="btn_markCode" Header="Mark as code" LargeIcon="{svg2xaml:SvgImage Images/laptop_windows.svg}" Click="btnCode_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Structure">
-                <Fluent:RibbonGroupBox Header="save">
-                    <Fluent:Button x:Name="btn_seperator" Header="Seperator" LargeIcon="Images/load.png" Click="btnSeparator_click" />
-                    <Fluent:Button x:Name="btn_linebreak" Header="Linebreak" LargeIcon="Images/load.png" Click="btnLineBreak_click" />
+                <Fluent:RibbonGroupBox Header="Break and separate">
+                    <Fluent:Button x:Name="btn_seperator" Header="Seperator" LargeIcon="{svg2xaml:SvgImage Images/space_bar.svg}" Click="btnSeparator_click" />
+                    <Fluent:Button x:Name="btn_linebreak" Header="Linebreak" LargeIcon="{svg2xaml:SvgImage Images/keyboard_return.svg}" Click="btnLineBreak_click" />
                     <Fluent:Button x:Name="btn_paragraph" Header="Clause" LargeIcon="Images/load.png" Click="btnParagraph_click" />
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Headings">
-                    <Fluent:DropDownButton x:Name="ddbtn_Heading" Header="Headings" >
+                    <Fluent:DropDownButton x:Name="ddbtn_Heading" Header="Headings" LargeIcon="Images/header1_100.png">
                         <Fluent:DropDownButton.Items>
                             <Fluent:MenuItem Header="Heading 1.Level" Click="OnClickHeading1Level"></Fluent:MenuItem>
                             <Fluent:MenuItem Header="Heading 2.Level" Click="OnClickHeading2Level"></Fluent:MenuItem>
@@ -56,10 +57,17 @@
                     </Fluent:DropDownButton>
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Quote">
-                        <Fluent:Button x:Name="btn_quote" Header="Quote" LargeIcon="Images/load.png" Click="btnQuote_click" />
-                        <Fluent:Button x:Name="btn_unquote" Header="Unquote" LargeIcon="Images/load.png" Click="btnUnQuote_click" />
+                    <Fluent:Button x:Name="btn_quote" Header="Quote" LargeIcon="{svg2xaml:SvgImage Images/format_quote.svg}" Click="btnQuote_click"></Fluent:Button>
+                    <Fluent:Button x:Name="btn_unquote" Header="Unquote" LargeIcon="Images/load.png" Click="btnUnQuote_click"></Fluent:Button>
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Insert">
+                    <Fluent:RibbonGroupBox Header="Media">
+                        <Fluent:Button x:Name="btn_insert_photo" Header="Insert photo" LargeIcon="{svg2xaml:SvgImage Images/insert_photo.svg}"></Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            
         </Fluent:Ribbon>
 
         <RichTextBox x:Name="rtbMainText" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" Width="Auto">

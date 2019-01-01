@@ -41,8 +41,12 @@
       <HintPath>..\packages\Fluent.Ribbon.6.1.0.326\lib\net45\Fluent.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Svg2Xaml, Version=0.3.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Svg2Xaml.0.3.0.5\lib\net40\Svg2Xaml.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -83,7 +87,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -95,8 +99,17 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Images\format_bold.svg" />
+    <Resource Include="Images\format_italic.svg" />
+    <Resource Include="Images\format_list_numbered.svg" />
+    <Resource Include="Images\format_textdirection_r_to_l.svg" />
+    <Resource Include="Images\insert_photo.svg" />
+    <Resource Include="Images\keyboard_return.svg" />
+    <Resource Include="Images\laptop_windows.svg" />
+    <None Include="Images\format_quote.svg" />
+    <None Include="Images\space_bar.svg" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,6 +127,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\save_as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\header1_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\header2_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\header3_100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
