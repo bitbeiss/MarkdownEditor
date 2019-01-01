@@ -108,8 +108,8 @@
     <Resource Include="Images\insert_photo.svg" />
     <Resource Include="Images\keyboard_return.svg" />
     <Resource Include="Images\laptop_windows.svg" />
-    <None Include="Images\format_quote.svg" />
-    <None Include="Images\space_bar.svg" />
+    <Resource Include="Images\format_quote.svg" />
+    <Resource Include="Images\space_bar.svg" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
