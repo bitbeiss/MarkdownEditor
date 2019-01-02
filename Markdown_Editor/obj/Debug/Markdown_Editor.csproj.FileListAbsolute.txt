@@ -49,3 +49,4 @@ C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markd
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csproj.CoreCompileInputs.cache
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.exe
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.pdb
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csprojResolveAssemblyReference.cache

@@ -42,7 +42,7 @@
                 <Fluent:RibbonGroupBox Header="Break and separate">
                     <Fluent:Button x:Name="btn_seperator" Header="Seperator" LargeIcon="{svg2xaml:SvgImage Images/space_bar.svg}" Click="btnSeparator_click" />
                     <Fluent:Button x:Name="btn_linebreak" Header="Linebreak" LargeIcon="{svg2xaml:SvgImage Images/keyboard_return.svg}" Click="btnLineBreak_click" />
-                    <Fluent:Button x:Name="btn_paragraph" Header="Clause" LargeIcon="Images/load.png" Click="btnParagraph_click" />
+                    <Fluent:Button x:Name="btn_paragraph" Header="Clause" LargeIcon="{svg2xaml:SvgImage Images/paragraph.svg}" Click="btnParagraph_click" />
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Headings">
                     <Fluent:DropDownButton x:Name="ddbtn_Heading" Header="Headings" LargeIcon="Images/header1_100.png">
@@ -58,7 +58,7 @@
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Quote">
                     <Fluent:Button x:Name="btn_quote" Header="Quote" LargeIcon="{svg2xaml:SvgImage Images/format_quote.svg}" Click="btnQuote_click"></Fluent:Button>
-                    <Fluent:Button x:Name="btn_unquote" Header="Unquote" LargeIcon="Images/load.png" Click="btnUnQuote_click"></Fluent:Button>
+                    <Fluent:Button x:Name="btn_unquote" Header="Unquote" LargeIcon="{svg2xaml:SvgImage Images/cancel.svg}" Click="btnUnQuote_click"></Fluent:Button>
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Insert">

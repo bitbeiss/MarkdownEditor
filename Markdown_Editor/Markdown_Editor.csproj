@@ -110,6 +110,8 @@
     <Resource Include="Images\laptop_windows.svg" />
     <Resource Include="Images\format_quote.svg" />
     <Resource Include="Images\space_bar.svg" />
+    <Resource Include="Images\cancel.svg" />
+    <Resource Include="Images\paragraph.svg" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
