@@ -1,6 +1,8 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Windows.Documents;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -108,12 +110,16 @@ namespace Markdown_Editor
 
         private void btnBold_click(object sender, RoutedEventArgs e)
         {
-
+            //Fett **txt**
+            rtbMainText.Selection.Start.InsertTextInRun("**");
+            rtbMainText.Selection.End.InsertTextInRun("**");
         }
 
         private void btnItalic_click(object sender, RoutedEventArgs e)
         {
-
+            //Kursiv *txt*
+            rtbMainText.Selection.Start.InsertTextInRun("*");
+            rtbMainText.Selection.End.InsertTextInRun("*");
         }
 
         private void btnCode_click(object sender, RoutedEventArgs e)
@@ -138,47 +144,78 @@ namespace Markdown_Editor
 
         private void btnQuote_click(object sender, RoutedEventArgs e)
         {
-
+            rtbMainText.Selection.Start.InsertTextInRun(">");
         }
 
         private void btnUnQuote_click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void OnClickHeading1Level(object sender, RoutedEventArgs e)
         {
-
+            //heading level 1 #txt#
+            rtbMainText.Selection.Start.InsertTextInRun("#");
+            rtbMainText.Selection.End.InsertTextInRun("#");
         }
 
         private void OnClickHeading2Level(object sender, RoutedEventArgs e)
         {
-
+            //heading level 2 #txt#
+            rtbMainText.Selection.Start.InsertTextInRun("##");
+            rtbMainText.Selection.End.InsertTextInRun("##");
         }
 
         private void OnClickHeading3Level(object sender, RoutedEventArgs e)
         {
-
+            //heading level 3 #txt#
+            rtbMainText.Selection.Start.InsertTextInRun("###");
+            rtbMainText.Selection.End.InsertTextInRun("###");
         }
 
         private void OnClickHeading4Level(object sender, RoutedEventArgs e)
         {
-
+            //heading level 4 #txt#
+            rtbMainText.Selection.Start.InsertTextInRun("####");
+            rtbMainText.Selection.End.InsertTextInRun("####");
         }
 
         private void OnClickHeading5Level(object sender, RoutedEventArgs e)
         {
-
+            //heading level 5 #txt#
+            rtbMainText.Selection.Start.InsertTextInRun("#####");
+            rtbMainText.Selection.End.InsertTextInRun("#####");
         }
 
         private void OnClickHeading6Level(object sender, RoutedEventArgs e)
         {
-
+            //heading level 6 #txt#
+            rtbMainText.Selection.Start.InsertTextInRun("######");
+            rtbMainText.Selection.End.InsertTextInRun("######");
         }
 
         private void btnList_click(object sender, RoutedEventArgs e)
         {
+            rtbMainText.Selection.Start.InsertTextInRun("+");
 
+            Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
+            TextPointer position = rtbMainText.Selection.Start;
+
+            MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
+            Int32 addOffset = 0;
+            foreach (Match ma in matches) {
+                //System.Diagnostics.Debug.WriteLine("%i:"+ i.ToString());
+                rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index+addOffset+3, LogicalDirection.Forward); 
+                rtbMainText.CaretPosition.InsertTextInRun("+");
+                //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
+                addOffset = addOffset + 3;
+            }
+        }
+
+        private void btnInsertPhoto_click(object sender, RoutedEventArgs e)
+        {
+            rtbMainText.Selection.Start.InsertTextInRun("![");
+            rtbMainText.Selection.End.InsertTextInRun("](pfad)");
         }
     }
 }
