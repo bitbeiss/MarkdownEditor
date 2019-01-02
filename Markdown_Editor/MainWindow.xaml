@@ -35,7 +35,10 @@
                     <Fluent:Button x:Name="btn_italic" Header="Italic" LargeIcon="{svg2xaml:SvgImage Images/format_italic.svg}" Click="btnItalic_click" />
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Code">
-                    <Fluent:Button x:Name="btn_markCode" Header="Mark as code" LargeIcon="{svg2xaml:SvgImage Images/laptop_windows.svg}" Click="btnCode_click" />
+                    <Fluent:Button x:Name="btn_mark_code" Header="Mark as code" LargeIcon="{svg2xaml:SvgImage Images/laptop_windows.svg}" Click="btnCode_click" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Lists">
+                    <Fluent:Button x:Name="btn_list" Header="Format as list" LargeIcon="{svg2xaml:SvgImage Images/format_list.svg}" Click="btnList_click" /> 
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Structure">

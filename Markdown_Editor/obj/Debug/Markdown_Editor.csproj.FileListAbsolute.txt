@@ -23,6 +23,11 @@ D:\Software\Visual Studio 2017\Programme\Markdown_Editor\Markdown_Editor\bin\Deb
 D:\Software\Visual Studio 2017\Programme\Markdown_Editor\Markdown_Editor\bin\Debug\Fluent.pdb
 D:\Software\Visual Studio 2017\Programme\Markdown_Editor\Markdown_Editor\bin\Debug\Fluent.xml
 D:\Software\Visual Studio 2017\Programme\Markdown_Editor\Markdown_Editor\obj\Debug\App.baml
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\MainWindow.baml
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\MainWindow.g.cs
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\App.g.cs
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor_MarkupCompile.cache
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor_MarkupCompile.lref
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Markdown_Editor.exe.config
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Markdown_Editor.exe
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Markdown_Editor.pdb
@@ -37,11 +42,7 @@ C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Fluen
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Microsoft.Windows.Shell.pdb
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Microsoft.Windows.Shell.xml
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Svg2Xaml.xml
-C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\MainWindow.baml
-C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\MainWindow.g.cs
-C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\App.g.cs
-C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor_MarkupCompile.cache
-C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor_MarkupCompile.lref
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csprojResolveAssemblyReference.cache
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\App.baml
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.g.resources
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.Properties.Resources.resources
@@ -49,4 +50,3 @@ C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markd
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csproj.CoreCompileInputs.cache
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.exe
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.pdb
-C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csprojResolveAssemblyReference.cache

@@ -133,6 +133,9 @@
   <data name="format_italic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\format_italic.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="format_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\format_list.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="format_list_numbered" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\format_list_numbered.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

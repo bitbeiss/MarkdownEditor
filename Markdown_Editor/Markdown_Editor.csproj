@@ -112,6 +112,7 @@
     <Resource Include="Images\space_bar.svg" />
     <Resource Include="Images\cancel.svg" />
     <Resource Include="Images\paragraph.svg" />
+    <Resource Include="Images\format_list.svg" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

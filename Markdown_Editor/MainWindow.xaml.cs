@@ -175,5 +175,10 @@ namespace Markdown_Editor
         {
 
         }
+
+        private void btnList_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
