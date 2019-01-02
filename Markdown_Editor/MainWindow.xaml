@@ -67,6 +67,9 @@
             <Fluent:RibbonTabItem Header="Insert">
                     <Fluent:RibbonGroupBox Header="Media">
                         <Fluent:Button x:Name="btn_insert_photo" Header="Insert photo" LargeIcon="{svg2xaml:SvgImage Images/insert_photo.svg}" Click="btnInsertPhoto_click"></Fluent:Button>
+                    </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Link">
+                    <Fluent:Button x:Name="btn_insert_hyperlink" Header="Insert hyperlink" LargeIcon="{svg2xaml:SvgImage Images/insert_hyperlink.svg}" Click="btnInsertHyperlink_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
 

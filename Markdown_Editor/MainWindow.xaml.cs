@@ -139,7 +139,7 @@ namespace Markdown_Editor
 
         private void btnParagraph_click(object sender, RoutedEventArgs e)
         {
-
+            rtbMainText.Selection.Start.InsertLineBreak();
         }
 
         private void btnQuote_click(object sender, RoutedEventArgs e)
@@ -216,6 +216,11 @@ namespace Markdown_Editor
         {
             rtbMainText.Selection.Start.InsertTextInRun("![");
             rtbMainText.Selection.End.InsertTextInRun("](pfad)");
+        }
+
+        private void btnInsertHyperlink_click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
