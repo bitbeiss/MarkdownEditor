@@ -198,7 +198,8 @@ namespace Markdown_Editor
         {
             rtbMainText.Selection.Start.InsertTextInRun("+");
 
-            Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
+            //Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
+            Regex reg = new Regex("(\n)", RegexOptions.Compiled);
             TextPointer position = rtbMainText.Selection.Start;
 
             MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
@@ -208,7 +209,8 @@ namespace Markdown_Editor
                 rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index+addOffset+3, LogicalDirection.Forward); 
                 rtbMainText.CaretPosition.InsertTextInRun("+");
                 //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
-                addOffset = addOffset + 3;
+                addOffset = addOffset + 2;
+                //toDo: ab der 4. Zeile verzaehlt sich der Algorithmus um 1 zu wenig pro Zeile
             }
         }
 
