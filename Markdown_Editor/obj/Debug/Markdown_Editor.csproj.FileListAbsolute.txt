@@ -42,7 +42,6 @@ C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Fluen
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Microsoft.Windows.Shell.pdb
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Microsoft.Windows.Shell.xml
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Svg2Xaml.xml
-C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csprojResolveAssemblyReference.cache
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\App.baml
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.g.resources
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.Properties.Resources.resources
@@ -79,3 +78,4 @@ D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\obj\Debu
 D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csproj.CoreCompileInputs.cache
 D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.exe
 D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.pdb
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csprojResolveAssemblyReference.cache

@@ -297,5 +297,11 @@ namespace Markdown_Editor
         {
 
         }
+
+        private void btnNewInstance_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
