@@ -162,16 +162,29 @@ namespace Markdown_Editor
 
         private void btnSeparator_click(object sender, RoutedEventArgs e)
         {
-
+            TextPointer position = rtbMainText.Selection.Start;
+            if (position.IsAtLineStartPosition)
+            {
+                position.InsertTextInRun("---");
+                position.InsertLineBreak();
+            }
+            else
+            {
+                position = position.InsertLineBreak();
+                position.GetPositionAtOffset(1, LogicalDirection.Forward).InsertTextInRun("---");
+                position.GetPositionAtOffset(5, LogicalDirection.Forward).InsertLineBreak();
+            }
         }
 
         private void btnLineBreak_click(object sender, RoutedEventArgs e)
         {
-
+            rtbMainText.Selection.Start.InsertTextInRun("  ");
+            rtbMainText.Selection.Start.GetPositionAtOffset(2, LogicalDirection.Forward).InsertLineBreak();
         }
 
         private void btnParagraph_click(object sender, RoutedEventArgs e)
         {
+            rtbMainText.Selection.Start.InsertLineBreak();
             rtbMainText.Selection.Start.InsertLineBreak();
         }
 
