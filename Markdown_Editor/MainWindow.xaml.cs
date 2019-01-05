@@ -196,7 +196,7 @@ namespace Markdown_Editor
 
         private void btnList_click(object sender, RoutedEventArgs e)
         {
-            rtbMainText.Selection.Start.InsertTextInRun("+");
+            rtbMainText.Selection.Start.InsertTextInRun("+ ");
 
             //Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
             Regex reg = new Regex("(\n)", RegexOptions.Compiled);
@@ -206,11 +206,30 @@ namespace Markdown_Editor
             Int32 addOffset = 0;
             foreach (Match ma in matches) {
                 //System.Diagnostics.Debug.WriteLine("%i:"+ i.ToString());
-                rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index+addOffset+3, LogicalDirection.Forward); 
-                rtbMainText.CaretPosition.InsertTextInRun("+");
+                rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index+addOffset+2, LogicalDirection.Forward); 
+                rtbMainText.CaretPosition.InsertTextInRun("+ ");
                 //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
-                addOffset = addOffset + 2;
-                //toDo: ab der 4. Zeile verzaehlt sich der Algorithmus um 1 zu wenig pro Zeile
+                addOffset = addOffset + 4;
+            }
+        }
+
+        private void btnNumberedList_click(object sender, RoutedEventArgs e)
+        {
+            rtbMainText.Selection.Start.InsertTextInRun("1. ");
+
+            //Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
+            Regex reg = new Regex("(\n)", RegexOptions.Compiled);
+            TextPointer position = rtbMainText.Selection.Start;
+
+            MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
+            Int32 addOffset = 0;
+            foreach (Match ma in matches)
+            {
+                //System.Diagnostics.Debug.WriteLine("%i:"+ i.ToString());
+                rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 3, LogicalDirection.Forward);
+                rtbMainText.CaretPosition.InsertTextInRun("1. ");
+                //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
+                addOffset = addOffset + 5;
             }
         }
 
