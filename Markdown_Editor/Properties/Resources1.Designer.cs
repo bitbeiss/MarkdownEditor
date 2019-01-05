@@ -73,6 +73,16 @@ namespace Markdown_Editor.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
+        internal static byte[] display {
+            get {
+                object obj = ResourceManager.GetObject("display", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
         internal static byte[] format_bold {
             get {
                 object obj = ResourceManager.GetObject("format_bold", resourceCulture);
@@ -86,6 +96,16 @@ namespace Markdown_Editor.Properties {
         internal static byte[] format_bold1 {
             get {
                 object obj = ResourceManager.GetObject("format_bold1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] format_grid {
+            get {
+                object obj = ResourceManager.GetObject("format_grid", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -261,6 +281,16 @@ namespace Markdown_Editor.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] redo {
+            get {
+                object obj = ResourceManager.GetObject("redo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap save {
@@ -286,6 +316,16 @@ namespace Markdown_Editor.Properties {
         internal static byte[] space_bar {
             get {
                 object obj = ResourceManager.GetObject("space_bar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] undo {
+            get {
+                object obj = ResourceManager.GetObject("undo", resourceCulture);
                 return ((byte[])(obj));
             }
         }

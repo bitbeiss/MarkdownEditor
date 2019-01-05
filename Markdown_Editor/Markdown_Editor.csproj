@@ -117,6 +117,10 @@
     <Resource Include="Images\paragraph.svg" />
     <Resource Include="Images\format_list.svg" />
     <Resource Include="Images\insert_link.svg" />
+    <Resource Include="Images\display.svg" />
+    <Resource Include="Images\format_grid.svg" />
+    <Resource Include="Images\redo.svg" />
+    <Resource Include="Images\undo.svg" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
