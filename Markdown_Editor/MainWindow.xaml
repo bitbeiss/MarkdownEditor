@@ -4,9 +4,14 @@
                      xmlns:Fluent="urn:fluent-ribbon"
                      xmlns:svg2xaml="clr-namespace:Svg2Xaml;assembly=Svg2Xaml"
                      Title="Markdown Editor" 
-                     Width="800" 
+                     Width="1600" 
                      Height="600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -27,6 +32,9 @@
                 <Fluent:RibbonGroupBox Header="Save">
                     <Fluent:Button x:Name="btnSave" Header="save" LargeIcon="Images/save.png" Click="btnSave_click"/>
                     <Fluent:Button x:Name="btnSaveAs" Header="save as" LargeIcon="Images/save_as.png" Click="btnSaveAs_click" />
+                    <Fluent:Button x:Name="undo" Header="undo" LargeIcon="{svg2xaml:SvgImage Images/undo.svg}" Click="btnSaveAs_click" />
+                    <Fluent:Button x:Name="redo" Header="redo" LargeIcon="{svg2xaml:SvgImage Images/redo.svg}" Click="btnSaveAs_click" />
+                    <Fluent:Button x:Name="display" Header="display" LargeIcon="{svg2xaml:SvgImage Images/display.svg}" Click="btnDisplay_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Format">
@@ -66,24 +74,27 @@
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Insert">
-                    <Fluent:RibbonGroupBox Header="Media">
-                        <Fluent:Button x:Name="btn_insert_photo" Header="Insert photo" LargeIcon="{svg2xaml:SvgImage Images/insert_photo.svg}" Click="btnInsertPhoto_click"></Fluent:Button>
-                    </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Media">
+                    <Fluent:Button x:Name="btn_insert_photo" Header="Insert photo" LargeIcon="{svg2xaml:SvgImage Images/insert_photo.svg}" Click="btnInsertPhoto_click"></Fluent:Button>
+                </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Link">
                     <Fluent:Button x:Name="btn_insert_hyperlink" Header="Insert hyperlink" LargeIcon="{svg2xaml:SvgImage Images/insert_link.svg}" Click="btnInsertHyperlink_click" />
+                    <Fluent:Button x:Name="btn_insert_table" Header="Insert table" LargeIcon="{svg2xaml:SvgImage Images/format_grid.svg}" Click="btnInsertTable_click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
 
-            
+
         </Fluent:Ribbon>
 
-        <RichTextBox x:Name="rtbMainText" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" Width="Auto">
+        <RichTextBox x:Name="rtbMainText" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Height="Auto" Margin="0,0,0,0.5" Width="Auto">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="RichTextBox"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
+        <WebBrowser x:Name="webBrowser" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="0,0,0,0.5" Width="Auto">
+        </WebBrowser>
     </Grid>
 </Fluent:RibbonWindow>
 

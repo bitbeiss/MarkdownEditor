@@ -108,7 +108,12 @@ namespace Markdown_Editor
             rtbMainText.Document.Blocks.Add(new Paragraph(new Run(content)));
         }
 
-        private void btnBold_click(object sender, RoutedEventArgs e)
+        private void btnDisplay_click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+            private void btnBold_click(object sender, RoutedEventArgs e)
         {
             //Fett **txt**
             rtbMainText.Selection.Start.InsertTextInRun("**");
@@ -162,7 +167,7 @@ namespace Markdown_Editor
 
         private void btnLineBreak_click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void btnParagraph_click(object sender, RoutedEventArgs e)
@@ -170,14 +175,29 @@ namespace Markdown_Editor
             rtbMainText.Selection.Start.InsertLineBreak();
         }
 
-        private void btnQuote_click(object sender, RoutedEventArgs e)
+        private void btnUnQuote_click(object sender, RoutedEventArgs e)
         {
             rtbMainText.Selection.Start.InsertTextInRun(">");
         }
 
-        private void btnUnQuote_click(object sender, RoutedEventArgs e)
+        private void btnQuote_click(object sender, RoutedEventArgs e)
         {
-           
+            rtbMainText.Selection.Start.InsertTextInRun("> ");
+
+            //Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
+            Regex reg = new Regex("(\n)", RegexOptions.Compiled);
+            TextPointer position = rtbMainText.Selection.Start;
+
+            MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
+            Int32 addOffset = 0;
+            foreach (Match ma in matches)
+            {
+                //System.Diagnostics.Debug.WriteLine("%i:"+ i.ToString());
+                rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 2, LogicalDirection.Forward);
+                rtbMainText.CaretPosition.InsertTextInRun("> ");
+                //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
+                addOffset = addOffset + 4;
+            }
         }
 
         private void OnClickHeading1Level(object sender, RoutedEventArgs e)
@@ -232,9 +252,10 @@ namespace Markdown_Editor
 
             MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
             Int32 addOffset = 0;
-            foreach (Match ma in matches) {
+            foreach (Match ma in matches)
+            {
                 //System.Diagnostics.Debug.WriteLine("%i:"+ i.ToString());
-                rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index+addOffset+2, LogicalDirection.Forward); 
+                rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 2, LogicalDirection.Forward);
                 rtbMainText.CaretPosition.InsertTextInRun("+ ");
                 //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
                 addOffset = addOffset + 4;
@@ -268,6 +289,11 @@ namespace Markdown_Editor
         }
 
         private void btnInsertHyperlink_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnInsertTable_click(object sender, RoutedEventArgs e)
         {
 
         }
