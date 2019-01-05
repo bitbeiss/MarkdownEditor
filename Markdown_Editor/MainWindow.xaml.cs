@@ -124,6 +124,34 @@ namespace Markdown_Editor
 
         private void btnCode_click(object sender, RoutedEventArgs e)
         {
+            bool selectedTextStartsInMiddleOfLine = false;
+            TextPointer position = rtbMainText.Selection.Start;
+            if (!position.IsAtLineStartPosition)
+            {
+                position = position.InsertLineBreak();
+                selectedTextStartsInMiddleOfLine = true;
+            }
+            position.InsertTextInRun("\t");
+
+            Regex reg = new Regex("(\n)", RegexOptions.Compiled);
+
+            int i = 0;
+            MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
+            Int32 addOffset = 0;
+            foreach (Match ma in matches)
+            {
+                if ((i <= 0) && selectedTextStartsInMiddleOfLine)
+                {
+                    i++;
+                    continue;
+                }
+                if(selectedTextStartsInMiddleOfLine)
+                    rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 3, LogicalDirection.Forward);
+                else
+                    rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 4, LogicalDirection.Forward);
+                rtbMainText.CaretPosition.InsertTextInRun("\t");
+                addOffset = addOffset + 4;
+            }
 
         }
 
