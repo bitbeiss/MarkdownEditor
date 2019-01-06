@@ -33,8 +33,8 @@
                 <Fluent:RibbonGroupBox Header="File">
                     <Fluent:Button x:Name="btnSave" Header="save" LargeIcon="Images/save.png" Click="btnSave_click"/>
                     <Fluent:Button x:Name="btnSaveAs" Header="save as" LargeIcon="Images/save_as.png" Click="btnSaveAs_click" />
-                    <Fluent:Button x:Name="btnUndo" Header="undo" LargeIcon="{svg2xaml:SvgImage Images/undo.svg}" Click="btnSaveAs_click" />
-                    <Fluent:Button x:Name="btnRedo" Header="redo" LargeIcon="{svg2xaml:SvgImage Images/redo.svg}" Click="btnSaveAs_click" />
+                    <Fluent:Button x:Name="btnUndo" Header="undo" LargeIcon="{svg2xaml:SvgImage Images/undo.svg}" Click="btnUndo_click" />
+                    <Fluent:Button x:Name="btnRedo" Header="redo" LargeIcon="{svg2xaml:SvgImage Images/redo.svg}" Click="btnRedo_click" />
                     <Fluent:Button x:Name="btnDisplay" Header="display" LargeIcon="{svg2xaml:SvgImage Images/display.svg}" Click="btnDisplay_click" />
                     
                 </Fluent:RibbonGroupBox>

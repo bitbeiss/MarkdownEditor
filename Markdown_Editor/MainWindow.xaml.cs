@@ -111,6 +111,16 @@ namespace Markdown_Editor
             rtbMainText.Document.Blocks.Add(new Paragraph(new Run(content)));
         }
 
+
+        private void btnUndo_click(object sender, RoutedEventArgs e) {
+            rtbMainText.Undo();
+
+        }
+
+        private void btnRedo_click(object sender, RoutedEventArgs e) {
+            rtbMainText.Redo();
+        }                                                                       
+
         private void btnDisplay_click(object sender, RoutedEventArgs e)
         {
             string richText = new TextRange(rtbMainText.Document.ContentStart, rtbMainText.Document.ContentEnd).Text;
