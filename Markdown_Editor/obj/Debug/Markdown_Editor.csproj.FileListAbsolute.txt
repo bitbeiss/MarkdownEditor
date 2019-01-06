@@ -79,3 +79,6 @@ D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\obj\Debu
 D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.exe
 D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.pdb
 C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markdown_Editor.csprojResolveAssemblyReference.cache
+D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.dll
+D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.pdb
+D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.xml

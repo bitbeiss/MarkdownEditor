@@ -16,6 +16,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Reflection;
+using Markdig;
 
 namespace Markdown_Editor
 {
@@ -110,7 +113,9 @@ namespace Markdown_Editor
 
         private void btnDisplay_click(object sender, RoutedEventArgs e)
         {
-            
+            string richText = new TextRange(rtbMainText.Document.ContentStart, rtbMainText.Document.ContentEnd).Text;
+            var result = Markdown.ToHtml(richText);
+            webBrowser.NavigateToString(result);
         }
 
             private void btnBold_click(object sender, RoutedEventArgs e)
@@ -129,6 +134,8 @@ namespace Markdown_Editor
 
         private void btnCode_click(object sender, RoutedEventArgs e)
         {
+
+
             bool selectedTextStartsInMiddleOfLine = false;
             TextPointer position = rtbMainText.Selection.Start;
             if (!position.IsAtLineStartPosition)
@@ -137,8 +144,7 @@ namespace Markdown_Editor
                 selectedTextStartsInMiddleOfLine = true;
             }
             position.InsertTextInRun("\t");
-
-            Regex reg = new Regex("(\n)", RegexOptions.Compiled);
+            Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
 
             int i = 0;
             MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
@@ -150,14 +156,15 @@ namespace Markdown_Editor
                     i++;
                     continue;
                 }
-                if(selectedTextStartsInMiddleOfLine)
+                if (selectedTextStartsInMiddleOfLine)
                     rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 3, LogicalDirection.Forward);
                 else
-                    rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 4, LogicalDirection.Forward);
+                    rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 3, LogicalDirection.Forward);
                 rtbMainText.CaretPosition.InsertTextInRun("\t");
-                addOffset = addOffset + 4;
+                addOffset = addOffset + 2;
+                //rtbMainText.Selection.Select(rtbMainText.CaretPosition, rtbMainText.Document.ContentEnd);
             }
-
+            
         }
 
         private void btnSeparator_click(object sender, RoutedEventArgs e)
@@ -313,7 +320,23 @@ namespace Markdown_Editor
 
         private void btnNewInstance_click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                using (Process myProcess = new Process())
+                {
+                    String path = System.AppDomain.CurrentDomain.BaseDirectory + "Markdown_Editor.exe";
 
+                    myProcess.StartInfo.UseShellExecute = false;
+                    myProcess.StartInfo.FileName = path;
+                    myProcess.StartInfo.CreateNoWindow = false;
+                    myProcess.Start();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
     }

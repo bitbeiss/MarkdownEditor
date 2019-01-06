@@ -28,7 +28,7 @@
             <Fluent:RibbonTabItem Header="Home">
                 <Fluent:RibbonGroupBox Header="Load">
                     <Fluent:Button x:Name="btnLoad" Header="load" LargeIcon="Images/load.png" Click="btnLoad_click" />
-                    <Fluent:Button x:Name="btnNewInstance" Header="new instance" LargeIcon="{svg2xaml:SvgImage Images/new_instance.svg}" Click="btnDisplay_click" />
+                    <Fluent:Button x:Name="btnNewInstance" Header="new instance" LargeIcon="{svg2xaml:SvgImage Images/new_instance.svg}" Click="btnNewInstance_click" />
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="File">
                     <Fluent:Button x:Name="btnSave" Header="save" LargeIcon="Images/save.png" Click="btnSave_click"/>
