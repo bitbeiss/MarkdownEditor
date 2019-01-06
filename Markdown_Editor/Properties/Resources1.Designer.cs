@@ -273,6 +273,26 @@ namespace Markdown_Editor.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
+        internal static byte[] Markdown_Editor {
+            get {
+                object obj = ResourceManager.GetObject("Markdown_Editor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] new_instance {
+            get {
+                object obj = ResourceManager.GetObject("new_instance", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
         internal static byte[] paragraph {
             get {
                 object obj = ResourceManager.GetObject("paragraph", resourceCulture);
