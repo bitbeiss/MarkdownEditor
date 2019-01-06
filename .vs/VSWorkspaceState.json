@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Markdown_Editor",
-    "\\Markdown_Editor\\Properties"
+    "\\Markdown_Editor\\bin",
+    "\\Markdown_Editor\\bin\\Debug"
   ],
-  "SelectedNode": "\\Markdown_Editor\\Properties\\Resources.resx",
+  "SelectedNode": "\\Markdown_Editor\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

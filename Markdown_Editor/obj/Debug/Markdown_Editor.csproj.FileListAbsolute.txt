@@ -82,3 +82,6 @@ C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\obj\Debug\Markd
 D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.dll
 D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.pdb
 D:\Software\Visual Studio 2017\Programme\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.xml
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.dll
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.pdb
+C:\Users\clemens\Desktop\UI_LABOR\MarkdownEditor\Markdown_Editor\bin\Debug\Markdig.xml
