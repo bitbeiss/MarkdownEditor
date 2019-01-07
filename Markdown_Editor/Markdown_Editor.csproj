@@ -157,5 +157,9 @@
   <ItemGroup>
     <None Include="bin\Debug\Markdown_Editor.exe" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\find.svg" />
+    <Resource Include="Images\replace.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

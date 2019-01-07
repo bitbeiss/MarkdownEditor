@@ -83,6 +83,16 @@ namespace Markdown_Editor.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
+        internal static byte[] find {
+            get {
+                object obj = ResourceManager.GetObject("find", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
         internal static byte[] format_bold {
             get {
                 object obj = ResourceManager.GetObject("format_bold", resourceCulture);
@@ -273,16 +283,6 @@ namespace Markdown_Editor.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
-        internal static byte[] Markdown_Editor {
-            get {
-                object obj = ResourceManager.GetObject("Markdown_Editor", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
-        /// </summary>
         internal static byte[] new_instance {
             get {
                 object obj = ResourceManager.GetObject("new_instance", resourceCulture);
@@ -306,6 +306,16 @@ namespace Markdown_Editor.Properties {
         internal static byte[] redo {
             get {
                 object obj = ResourceManager.GetObject("redo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] replace {
+            get {
+                object obj = ResourceManager.GetObject("replace", resourceCulture);
                 return ((byte[])(obj));
             }
         }

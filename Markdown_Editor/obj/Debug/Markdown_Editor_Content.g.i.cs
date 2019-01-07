@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/new_instance.svg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/replace.svg")]
 
 

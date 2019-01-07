@@ -36,7 +36,14 @@
                     <Fluent:Button x:Name="btnUndo" Header="undo" LargeIcon="{svg2xaml:SvgImage Images/undo.svg}" Click="btnUndo_click" />
                     <Fluent:Button x:Name="btnRedo" Header="redo" LargeIcon="{svg2xaml:SvgImage Images/redo.svg}" Click="btnRedo_click" />
                     <Fluent:Button x:Name="btnDisplay" Header="display" LargeIcon="{svg2xaml:SvgImage Images/display.svg}" Click="btnDisplay_click" />
-                    
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="edit">
+                    <StackPanel Margin="0,10,0,0">
+                        <Fluent:TextBox x:Name="txbFind" Header="Find:      " Width="200" TextChanged="txbFind_TextChanged"/>
+                        <Fluent:TextBox x:Name="txbReplace" Header="Replace:" Width="200" Margin="10" />
+                    </StackPanel>
+                    <Fluent:Button x:Name="btnFind" Header="Find" LargeIcon="{svg2xaml:SvgImage Images/find.svg}" Click="btnFind_Click" />
+                    <Fluent:Button x:Name="btnReplace" Header="Replace" LargeIcon="{svg2xaml:SvgImage Images/replace.svg}" Click="btnReplace_Click" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Format">
@@ -72,7 +79,6 @@
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Quote">
                     <Fluent:Button x:Name="btn_quote" Header="Quote" LargeIcon="{svg2xaml:SvgImage Images/format_quote.svg}" Click="btnQuote_click"></Fluent:Button>
-                    <Fluent:Button x:Name="btn_unquote" Header="Unquote" LargeIcon="{svg2xaml:SvgImage Images/cancel.svg}" Click="btnUnQuote_click"></Fluent:Button>
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Insert">
@@ -89,6 +95,11 @@
         </Fluent:Ribbon>
 
         <RichTextBox x:Name="rtbMainText" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Height="Auto" Margin="0,0,0,0.5" Width="Auto">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
             <FlowDocument>
                 <Paragraph>
                     <Run Text="RichTextBox"/>

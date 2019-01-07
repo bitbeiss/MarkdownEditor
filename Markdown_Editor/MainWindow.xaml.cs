@@ -87,8 +87,6 @@ namespace Markdown_Editor
             dlgFileOpen.InitialDirectory =
                  Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 
-            //dlgFileOpen.Filter = "*.markdown|*.mdown|*.mkdn|*.mkd|*.md|*.mdtxt|*mdtext|*.txt|*.text*|.Rmd";
-            //dlgFileOpen.Filter = "*.markdown|*.mdown|*.mkdn|*.mkd|*.md|*.mdtxt|*mdtext|*.txt|*.text*|.Rmd";
             dlgFileOpen.Filter = "Textdateien (*.mkd)|*.mkd";
 
             dlgFileOpen.ShowDialog();
@@ -144,37 +142,8 @@ namespace Markdown_Editor
 
         private void btnCode_click(object sender, RoutedEventArgs e)
         {
-
-
-            bool selectedTextStartsInMiddleOfLine = false;
-            TextPointer position = rtbMainText.Selection.Start;
-            if (!position.IsAtLineStartPosition)
-            {
-                position = position.InsertLineBreak();
-                selectedTextStartsInMiddleOfLine = true;
-            }
-            position.InsertTextInRun("\t");
-            Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
-
-            int i = 0;
-            MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
-            Int32 addOffset = 0;
-            foreach (Match ma in matches)
-            {
-                if ((i <= 0) && selectedTextStartsInMiddleOfLine)
-                {
-                    i++;
-                    continue;
-                }
-                if (selectedTextStartsInMiddleOfLine)
-                    rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 3, LogicalDirection.Forward);
-                else
-                    rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 3, LogicalDirection.Forward);
-                rtbMainText.CaretPosition.InsertTextInRun("\t");
-                addOffset = addOffset + 2;
-                //rtbMainText.Selection.Select(rtbMainText.CaretPosition, rtbMainText.Document.ContentEnd);
-            }
-            
+            rtbMainText.Selection.Text = Regex.Replace(rtbMainText.Selection.Text, "\r\n", "  \r\n\t");
+            rtbMainText.Selection.Text = "  \n\t" + rtbMainText.Selection.Text;
         }
 
         private void btnSeparator_click(object sender, RoutedEventArgs e)
@@ -182,13 +151,13 @@ namespace Markdown_Editor
             TextPointer position = rtbMainText.Selection.Start;
             if (position.IsAtLineStartPosition)
             {
-                position.InsertTextInRun("---");
+                position.InsertTextInRun("- - -");
                 position.InsertLineBreak();
             }
             else
             {
                 position = position.InsertLineBreak();
-                position.GetPositionAtOffset(1, LogicalDirection.Forward).InsertTextInRun("---");
+                position.GetPositionAtOffset(1, LogicalDirection.Forward).InsertTextInRun("- - -");
                 position.GetPositionAtOffset(5, LogicalDirection.Forward).InsertLineBreak();
             }
         }
@@ -205,71 +174,52 @@ namespace Markdown_Editor
             rtbMainText.Selection.Start.InsertLineBreak();
         }
 
-        private void btnUnQuote_click(object sender, RoutedEventArgs e)
-        {
-            rtbMainText.Selection.Start.InsertTextInRun(">");
-        }
-
         private void btnQuote_click(object sender, RoutedEventArgs e)
         {
-            rtbMainText.Selection.Start.InsertTextInRun("> ");
-
-            //Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
-            Regex reg = new Regex("(\n)", RegexOptions.Compiled);
-            TextPointer position = rtbMainText.Selection.Start;
-
-            MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
-            Int32 addOffset = 0;
-            foreach (Match ma in matches)
-            {
-                //System.Diagnostics.Debug.WriteLine("%i:"+ i.ToString());
-                rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 2, LogicalDirection.Forward);
-                rtbMainText.CaretPosition.InsertTextInRun("> ");
-                //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
-                addOffset = addOffset + 4;
-            }
+            rtbMainText.Selection.Text = Regex.Replace(rtbMainText.Selection.Text, "\r\n", "  \r\n> ");
+            rtbMainText.Selection.Text = "  \n> " + rtbMainText.Selection.Text;
         }
 
         private void OnClickHeading1Level(object sender, RoutedEventArgs e)
         {
             //heading level 1 #txt#
-            rtbMainText.Selection.Start.InsertTextInRun("#");
-            rtbMainText.Selection.End.InsertTextInRun("#");
+            rtbMainText.Selection.Start.InsertTextInRun(" # ");
+            rtbMainText.Selection.End.InsertTextInRun(" # ");
         }
 
         private void OnClickHeading2Level(object sender, RoutedEventArgs e)
         {
             //heading level 2 #txt#
-            rtbMainText.Selection.Start.InsertTextInRun("##");
-            rtbMainText.Selection.End.InsertTextInRun("##");
+            rtbMainText.Selection.Start.InsertTextInRun(" ## ");
+            rtbMainText.Selection.End.InsertTextInRun(" ## ");
         }
 
         private void OnClickHeading3Level(object sender, RoutedEventArgs e)
         {
             //heading level 3 #txt#
-            rtbMainText.Selection.Start.InsertTextInRun("###");
-            rtbMainText.Selection.End.InsertTextInRun("###");
+            rtbMainText.Selection.Start.InsertTextInRun(" ### ");
+            rtbMainText.Selection.End.InsertTextInRun(" ### ");
         }
 
         private void OnClickHeading4Level(object sender, RoutedEventArgs e)
         {
             //heading level 4 #txt#
-            rtbMainText.Selection.Start.InsertTextInRun("####");
-            rtbMainText.Selection.End.InsertTextInRun("####");
+            rtbMainText.Selection.Start.InsertTextInRun(" #### ");
+            rtbMainText.Selection.End.InsertTextInRun(" #### ");
         }
 
         private void OnClickHeading5Level(object sender, RoutedEventArgs e)
         {
             //heading level 5 #txt#
-            rtbMainText.Selection.Start.InsertTextInRun("#####");
-            rtbMainText.Selection.End.InsertTextInRun("#####");
+            rtbMainText.Selection.Start.InsertTextInRun(" ##### ");
+            rtbMainText.Selection.End.InsertTextInRun(" ##### ");
         }
 
         private void OnClickHeading6Level(object sender, RoutedEventArgs e)
         {
             //heading level 6 #txt#
-            rtbMainText.Selection.Start.InsertTextInRun("######");
-            rtbMainText.Selection.End.InsertTextInRun("######");
+            rtbMainText.Selection.Start.InsertTextInRun(" ###### ");
+            rtbMainText.Selection.End.InsertTextInRun(" ###### ");
         }
 
         private void btnList_click(object sender, RoutedEventArgs e)
@@ -296,7 +246,6 @@ namespace Markdown_Editor
         {
             rtbMainText.Selection.Start.InsertTextInRun("1. ");
 
-            //Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
             Regex reg = new Regex("(\n)", RegexOptions.Compiled);
             TextPointer position = rtbMainText.Selection.Start;
 
@@ -304,10 +253,8 @@ namespace Markdown_Editor
             Int32 addOffset = 0;
             foreach (Match ma in matches)
             {
-                //System.Diagnostics.Debug.WriteLine("%i:"+ i.ToString());
                 rtbMainText.CaretPosition = position.GetPositionAtOffset(ma.Index + addOffset + 3, LogicalDirection.Forward);
                 rtbMainText.CaretPosition.InsertTextInRun("1. ");
-                //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
                 addOffset = addOffset + 5;
             }
         }
@@ -320,12 +267,23 @@ namespace Markdown_Editor
 
         private void btnInsertHyperlink_click(object sender, RoutedEventArgs e)
         {
-
+            if(rtbMainText.Selection.IsEmpty)
+                rtbMainText.Selection.Start.InsertTextInRun("[](http://)");
+            else
+            {
+                rtbMainText.Selection.Start.InsertTextInRun("[");
+                rtbMainText.Selection.End.InsertTextInRun("](http://)");
+            }
+            
         }
 
         private void btnInsertTable_click(object sender, RoutedEventArgs e)
         {
-
+            rtbMainText.Selection.Start.InsertTextInRun(
+                "| Spalte 1 | Spalte 2 | Spalte 3 |  \n" +
+                "| :------- | :------: | -------:  |  \n" +
+                "| Zeile1 |Zeile 2 |Zeile 3|  \n" +
+                "|Zeile1 |Zeile 2 |Zeile 3|  \n");
         }
 
         private void btnNewInstance_click(object sender, RoutedEventArgs e)
@@ -349,5 +307,65 @@ namespace Markdown_Editor
             }
         }
 
+
+        private void btnFind_Click(object sender, RoutedEventArgs e)
+        {
+            string keyword = txbFind.Text;
+
+            TextRange text = new TextRange(rtbMainText.Document.ContentStart, rtbMainText.Document.ContentEnd);
+            TextPointer current = text.Start.GetInsertionPosition(LogicalDirection.Forward);
+            while (current != null)
+            {
+                string textInRun = current.GetTextInRun(LogicalDirection.Forward);
+                if (!string.IsNullOrWhiteSpace(textInRun))
+                {
+                    int index = textInRun.IndexOf(keyword);
+                    if (index != -1)
+                    {
+                        TextPointer selectionStart = current.GetPositionAtOffset(index, LogicalDirection.Forward);
+                        TextPointer selectionEnd = selectionStart.GetPositionAtOffset(keyword.Length, LogicalDirection.Forward);
+                        TextRange selection = new TextRange(selectionStart, selectionEnd);
+                        selection.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Yellow);
+                        rtbMainText.Selection.Select(selection.Start, selection.End);
+                        rtbMainText.Focus();
+                    }
+                }
+                current = current.GetNextContextPosition(LogicalDirection.Forward);
+            }
+        }
+
+        private void btnReplace_Click(object sender, RoutedEventArgs e)
+        {
+            string keyword = txbFind.Text;
+            string newString = txbReplace.Text;
+            TextRange text = new TextRange(rtbMainText.Document.ContentStart, rtbMainText.Document.ContentEnd);
+            TextPointer current = text.Start.GetInsertionPosition(LogicalDirection.Forward);
+            while (current != null)
+            {
+                string textInRun = current.GetTextInRun(LogicalDirection.Forward);
+                if (!string.IsNullOrWhiteSpace(textInRun))
+                {
+                    int index = textInRun.IndexOf(keyword);
+                    if (index != -1)
+                    {
+                        TextPointer selectionStart = current.GetPositionAtOffset(index, LogicalDirection.Forward);
+                        TextPointer selectionEnd = selectionStart.GetPositionAtOffset(keyword.Length, LogicalDirection.Forward);
+                        TextRange selection = new TextRange(selectionStart, selectionEnd);
+                        selection.Text = newString;
+                        rtbMainText.Selection.Select(selection.Start, selection.End);
+                        rtbMainText.Focus();
+                    }
+                }
+                current = current.GetNextContextPosition(LogicalDirection.Forward);
+            }
+            rtbMainText.SelectAll();
+            rtbMainText.Selection.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Yellow);
+        }
+
+        private void txbFind_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            rtbMainText.SelectAll();
+            rtbMainText.Selection.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.White);
+        }
     }
 }
