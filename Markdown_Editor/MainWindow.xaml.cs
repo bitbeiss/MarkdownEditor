@@ -224,12 +224,14 @@ namespace Markdown_Editor
 
         private void btnList_click(object sender, RoutedEventArgs e)
         {
+            
             rtbMainText.Selection.Start.InsertTextInRun("+ ");
-
+            
             //Regex reg = new Regex("(\n|\r\n?)", RegexOptions.Compiled);
-            Regex reg = new Regex("(\n)", RegexOptions.Compiled);
+            //Regex reg = new Regex("(\n)", RegexOptions.Compiled);
             TextPointer position = rtbMainText.Selection.Start;
-
+            rtbMainText.Selection.Text = Regex.Replace(rtbMainText.Selection.Text.Trim('\n'), "\r\n", "  \r\n+ ");
+            /*
             MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
             Int32 addOffset = 0;
             foreach (Match ma in matches)
@@ -240,15 +242,20 @@ namespace Markdown_Editor
                 //Inserted "+" offset: shifted by +3!  ("\n" and one position to end up at the beginning of the next line.)
                 addOffset = addOffset + 4;
             }
+            */
         }
 
         private void btnNumberedList_click(object sender, RoutedEventArgs e)
         {
+            
             rtbMainText.Selection.Start.InsertTextInRun("1. ");
 
-            Regex reg = new Regex("(\n)", RegexOptions.Compiled);
-            TextPointer position = rtbMainText.Selection.Start;
+            //Regex reg = new Regex("(\n)", RegexOptions.Compiled);
 
+            TextPointer position = rtbMainText.Selection.Start;
+            rtbMainText.Selection.Text = Regex.Replace(rtbMainText.Selection.Text.Trim('\n'), "\r\n", "  \r\n1. ");
+
+            /*
             MatchCollection matches = reg.Matches(rtbMainText.Selection.Text);
             Int32 addOffset = 0;
             foreach (Match ma in matches)
@@ -257,6 +264,7 @@ namespace Markdown_Editor
                 rtbMainText.CaretPosition.InsertTextInRun("1. ");
                 addOffset = addOffset + 5;
             }
+            */
         }
 
         private void btnInsertPhoto_click(object sender, RoutedEventArgs e)
@@ -358,8 +366,6 @@ namespace Markdown_Editor
                 }
                 current = current.GetNextContextPosition(LogicalDirection.Forward);
             }
-            rtbMainText.SelectAll();
-            rtbMainText.Selection.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Yellow);
         }
 
         private void txbFind_TextChanged(object sender, TextChangedEventArgs e)
