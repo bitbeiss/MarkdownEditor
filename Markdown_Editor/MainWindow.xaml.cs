@@ -157,7 +157,7 @@ namespace Markdown_Editor
             else
             {
                 position = position.InsertLineBreak();
-                position.GetPositionAtOffset(1, LogicalDirection.Forward).InsertTextInRun("- - -");
+                position.GetPositionAtOffset(0, LogicalDirection.Forward).InsertTextInRun("- - -");
                 position.GetPositionAtOffset(5, LogicalDirection.Forward).InsertLineBreak();
             }
         }
